@@ -1,26 +1,21 @@
 //your code here!
-
-// Get the list element
 const list = document.getElementById('infi-list');
 
-// Add event listener to detect scrolling
 list.addEventListener('scroll', function() {
-  // Check if the user has reached the end of the list
   if (list.scrollTop + list.clientHeight >= list.scrollHeight) {
-    // User has reached the end, add more list items
-    addMoreItems();
+    addItems();
   }
 });
 
 // Function to add more list items
-function addMoreItems() {
+function addItems() {
   // Number of new items to add
-  const numItemsToAdd = 2;
+  const itemsToAdd = 2;
 
   // Generate new list items and append them to the list
-  for (let i = 1; i <= numItemsToAdd; i++) {
+  for (let i = 1; i <= itemsToAdd; i++) {
     const newItem = document.createElement('li');
-    newItem.textContent = 'List Item ' + (list.childElementCount + i);
+    newItem.textContent = 'Item ' + (list.childElementCount + i);
     list.appendChild(newItem);
   }
 }
